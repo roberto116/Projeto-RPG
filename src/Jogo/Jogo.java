@@ -10,11 +10,12 @@ public class Jogo {
 
 	static Scanner scan = new Scanner(System.in);
 
-	static int AtaqueUsuario() {
+	static int AtaqueUsuario(int soco,int chute,int especiais) {
 		int ataque;
 		System.out.println("*--Escolha seu Ataque--*");
-		System.out.println("1 - Soco");
-		System.out.println("2 - Especial");
+		System.out.println("1 - Soco - 7 de dano" +"("+ soco+")");
+		System.out.println("2 - Chute - 5 de dano" +"("+ chute+")");
+		System.out.println("3 - Kamehameha - 20 de dano" +"("+ especiais +")");
 		ataque = scan.nextInt();
 		return ataque;
 	}
@@ -24,41 +25,69 @@ public class Jogo {
 		return gerador.nextInt(3) + 1;
 	}
 
-	static void HP(int hpUsuario, int hpCpu, int especiais) {
+	static void HP(int hpUsuario, int hpCpu) {
 		System.out.println("=======================");
 		System.out.println("- HP Usuario: " + hpUsuario);
-		System.out.println("-HP Oponente: " + hpCpu);
-		System.out.println("* Contagem Especial: " + especiais);
+		System.out.println("- HP Oponente: " + hpCpu);		
 		System.out.println("=======================");
 	}
 
 	static int Combate() {
-		int hpUsuario = 150;
+		int hpUsuario = 500;
 		int hpCpu;
+		int soco = 10;
+		int chute = 15;
 		int especiais = 5;
 		int ataque;
 		int i = 1;
-
-		while (hpUsuario > 0) {
-			hpCpu = 11 + i;
-
+		int resposta;
+		int continuar;
+		
+		System.out.println("Oi, eu sou o Goku! Preciso da sua ajuda para deter o Frezza, antes que ele pegue todas as esferas do dragão do planeta Namekusei.");
+		System.out.println("Ele deseja algo diabólico com esse poder, não podemos deixar que esse poder caia em suas mãos!");
+		System.out.println("Kuririm, Gohan e Bulma chegaram antes de mim, será que eles estão bem?");
+		System.out.println("não vejo a hora de mostrar todo meu treinamento, sera que existem inimigos fortes la?");
+		System.out.println("Sera que kuririm, Gohan e Bulma estão bem?");
+		System.out.println("1 - Para Continuar");
+		resposta = scan.nextInt();
+	
+		
+		while (i == 1) {
+					
+			if(resposta == 1) 
+			{
+				System.out.println("Goku logo que chega no planeta sente o ki de kuririn e gohan e parte com todo sua velocidade para ajuda-los ");
+				System.out.println("Depois de ajudar seus companheiros, Rikum uns dos memebro das forças especias Gyuniu vendo que seus inimigos estão se recuperando,");
+				System.out.println("Começa a se auto explodir, Goku parte pra cima e o confronta");
+			    System.out.println("1 - Para Batalhar");
+			    continuar = scan.nextInt();
+			    
+			if(continuar == 1) {
+				
+			hpCpu = 20;
 			System.out.println("=-=-=-=-=-=-=-=-=-=");
-			System.out.println("    INIMIGO " + i);
+			System.out.println("      Rikum     ");
 			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
 
 			while (hpUsuario > 0 && hpCpu > 0) {
-				HP(hpUsuario, hpCpu, especiais);
-				ataque = AtaqueUsuario();
+				HP(hpUsuario, hpCpu);
+				ataque = AtaqueUsuario(soco,chute,especiais);
 				switch (ataque) {
 				case 1:
-					System.out.println("Usuario Atacou com um Soco.");
+					System.out.println("Voce Atacou com um Soco.");
 					hpCpu -= 7;
+					soco--;
 					break;
 				case 2:
-					System.out.println("Usuario Atacou com um Especial.");
+					System.out.println("Voce Atacou com um Chute.");
+					hpCpu -= 5;
+					chute--;
+					break;
+				case 3:
+					System.out.println("Voce Atacou com um Kamehameha.");
 					hpCpu -= 20;
 					especiais--;
-					break;
+					break;	
 				default:
 					System.out.println("Opção Invalida.");
 					break;
@@ -67,22 +96,24 @@ public class Jogo {
 					ataque = AtaqueCpu();
 					switch (ataque) {
 					case 1:
-						System.out.println("Oponente Atacou com um Soco.");
+						System.out.println("Rikum atacou com um Soco.");
 						hpUsuario -= 2 + (int) (i / 10);
 						break;
 					case 2:
-						System.out.println("Oponente Atacou com um Chute.");
+						System.out.println("Rikum atacou com um Chute.");
 						hpUsuario -= 3 + (int) (i / 10);
 						break;
 					case 3:
-						System.out.println("Oponente Atacou com um Especial");
+						System.out.println("Rikum atacou com um Especial");
 						hpUsuario -= 4 + (int) (i / 20);
 						break;
 					}
 
 				} else {
-					System.out.println("Inimigo Derrotado");
+					System.out.println("Rikum Derrotado\n");
 				}
+			}
+			}
 			}
 			if (hpUsuario > 0) {
 				hpUsuario += 5;
@@ -99,21 +130,481 @@ public class Jogo {
 
 			i++;
 		}
+		
+          while (i == 2) {
+			
+        		System.out.println("Depois que Goku derrota Rikum, Yuz um dos seus companheiros das forças especias Gyuniu");
+				System.out.println("Comovido pela raiva, parte sem ao menos pensar para cima de Goku");
+				System.out.println("Será que Yuz perdeu a sanidade?");
+			    System.out.println("1 - Para Batalhar");
+			    continuar = scan.nextInt();
+			    
+			if(continuar == 1) { 
+			hpCpu = 32;
+			System.out.println("=-=-=-=-=-=-=-=-=-=");
+			System.out.println("    Yuz    ");
+			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
+
+			while (hpUsuario > 0 && hpCpu > 0) {
+				HP(hpUsuario, hpCpu);
+				ataque = AtaqueUsuario(soco,chute,especiais);
+				switch (ataque) {
+				case 1:
+					System.out.println("Voce Atacou com um Soco.");
+					hpCpu -= 7;
+					soco--;
+					break;
+				case 2:
+					System.out.println("Voce Atacou com um Chute.");
+					hpCpu -= 5;
+					chute--;
+					break;
+				case 3:
+					System.out.println("Voce Atacou com um Kamehameha.");
+					hpCpu -= 20;
+					especiais--;
+					break;	
+				default:
+					System.out.println("Opção Invalida.");
+					break;
+				}
+				if (hpCpu > 0) {
+					ataque = AtaqueCpu();
+					switch (ataque) {
+					case 1:
+						System.out.println(" Yuz Atacou com um Soco.");
+						hpUsuario -= 2 + (int) (i / 10);
+						break;
+					case 2:
+						System.out.println(" Yuz Atacou com um Chute.");
+						hpUsuario -= 3 + (int) (i / 10);
+						break;
+					case 3:
+						System.out.println(" Yuz Atacou com um Especial");
+						hpUsuario -= 4 + (int) (i / 20);
+						break;
+					default:
+	  					System.out.println("Opção Invalida.");
+	  					break;
+					}
+
+				} else {
+					System.out.println("Yuz Derrotado\n");
+				}
+			}
+			}
+			if (hpUsuario > 0) {
+				hpUsuario += 5;
+				if (hpUsuario > 150) {
+					hpUsuario = 150;
+				}
+				
+				
+			}
+			
+			i++;
+		}
+          while (i == 3) {
+        	  
+        		System.out.println("Boter das forças especias vendo isso, recua rapidamente(Boter é um dos seres mais rapidos do universo)\n");
+				System.out.println("-- Boter -- O que é aquele cara? como ele pode derrotar nos da a força gyuniu fomos escolhidos a dedo pelo senhor frezza");
+				System.out.println("-- Goku  -- Estava perguntando de mim?");
+				System.out.println("-- Boter -- Como voce ...");
+				System.out.println("Boter espantado parte para cima de Goku");							
+			    System.out.println("1 - Para Batalhar");
+			    continuar = scan.nextInt();
+			    
+			if(continuar == 1) { 
+  			
+  			hpCpu = 37;
+  			System.out.println("=-=-=-=-=-=-=-=-=-=");
+  			System.out.println("    Boter    ");
+  			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
+
+  			while (hpUsuario > 0 && hpCpu > 0) {
+  				HP(hpUsuario, hpCpu);
+  				ataque = AtaqueUsuario(soco,chute,especiais);
+  				switch (ataque) {
+  				case 1:
+					System.out.println("Voce Atacou com um Soco.");
+					hpCpu -= 7;
+					soco--;
+					break;
+				case 2:
+					System.out.println("Voce Atacou com um Chute.");
+					hpCpu -= 5;
+					chute--;
+					break;
+				case 3:
+					System.out.println("Voce Atacou com um Kamehameha.");
+					hpCpu -= 20;
+					especiais--;
+					break;	
+  				default:
+  					System.out.println("Opção Invalida.");
+  					break;
+  				}
+  				if (hpCpu > 0) {
+  					ataque = AtaqueCpu();
+  					switch (ataque) {
+  					case 1:
+  						System.out.println(" Boter Atacou com um Soco.");
+  						hpUsuario -= 2 + (int) (i / 10);
+  						break;
+  					case 2:
+  						System.out.println(" Boter Atacou com um Chute.");
+  						hpUsuario -= 3 + (int) (i / 10);
+  						break;
+  					case 3:
+  						System.out.println(" Boter Atacou com um Especial");
+  						hpUsuario -= 4 + (int) (i / 20);
+  						break;
+  					}
+
+  				} else {
+  					System.out.println("Boter Derrotado\n");
+  				}
+  			}
+  			}
+  			if (hpUsuario > 0) {
+  				hpUsuario += 5;
+  				if (hpUsuario > 150) {
+  					hpUsuario = 150;
+  				}
+  			
+  			}
+			
+  			i++;
+  		}
+          while (i == 4) {
+        	  
+        	    System.out.println("Apos Goku derrotar Boter ele volta para o campo de batalha\n");
+				System.out.println("-- Gurdo -- Onde esta Boter? O que voce fez com ele seu miseravel?");
+				System.out.println("-- Goku  -- Ah,Aquele rapinho? Apenas oque ele merecia por machucar meus amigos ");			
+				System.out.println("-- Gurdo -- Ora seu... eu vou acabar com voce!!! ");							
+			    System.out.println("1 - Para Batalhar");
+			    continuar = scan.nextInt();
+			    
+			if(continuar == 1) { 
+  			
+  			hpCpu = 34;
+  			System.out.println("=-=-=-=-=-=-=-=-=-=");
+  			System.out.println("    Gurdo    ");
+  			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
+
+  			while (hpUsuario > 0 && hpCpu > 0) {
+  				HP(hpUsuario, hpCpu);
+  				ataque = AtaqueUsuario(soco,chute,especiais);
+  				switch (ataque) {
+  				case 1:
+					System.out.println("Voce Atacou com um Soco.");
+					hpCpu -= 7;
+					soco--;
+					break;
+				case 2:
+					System.out.println("Voce Atacou com um Chute.");
+					hpCpu -= 5;
+					chute--;
+					break;
+				case 3:
+					System.out.println("Voce Atacou com um Kamehameha.");
+					hpCpu -= 20;
+					especiais--;
+					break;	
+  				default:
+  					System.out.println("Opção Invalida.");
+  					break;
+  				}
+  				if (hpCpu > 0) {
+  					ataque = AtaqueCpu();
+  					switch (ataque) {
+  					case 1:
+  						System.out.println(" Gurdo Atacou com um Soco.");
+  						hpUsuario -= 4 + (int) (i / 10);
+  						break;
+  					case 2:
+  						System.out.println(" Gurdo Atacou com um Chute.");
+  						hpUsuario -= 5 + (int) (i / 10);
+  						break;
+  					case 3:
+  						System.out.println(" Gurdo Atacou com um Especial");
+  						hpUsuario -= 6 + (int) (i / 20);
+  						break;
+  					}
+
+  				} else {
+  					System.out.println("Gurdo Derrotado\n");
+  				}
+  			}
+  			}
+  			if (hpUsuario > 0) {
+  				hpUsuario += 5;
+  				if (hpUsuario > 150) {
+  					hpUsuario = 150;
+  				}
+  				
+  			}
+
+  			i++;
+  		}
+          while (i == 5) {
+        	          	
+			  System.out.println("-- Capitão Ginyu  -- Vejo que voce lidou bem com meus auxiliados,porem agora que o verdadeiro desafio começou!!");
+			  System.out.println("-- Goku  -- Espero que voce n seja uma decepção como os outros");			
+			  System.out.println("-- Capitão Ginyu -- Pode apostar que não ");							
+			  System.out.println("1 - Para Batalhar");
+			    continuar = scan.nextInt();
+  			
+  			hpCpu = 45;
+  			System.out.println("=-=-=-=-=-=-=-=-=-=");
+  			System.out.println("    Capitão Ginyu    ");
+  			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
+
+  			while (hpUsuario > 0 && hpCpu > 0) {
+  				HP(hpUsuario, hpCpu);
+  				ataque = AtaqueUsuario(soco,chute,especiais);
+  				switch (ataque) {
+  				case 1:
+					System.out.println("Voce Atacou com um Soco.");
+					hpCpu -= 7;
+					soco--;
+					break;
+				case 2:
+					System.out.println("Voce Atacou com um Chute.");
+					hpCpu -= 5;
+					chute--;
+					break;
+				case 3:
+					System.out.println("Voce Atacou com um Kamehameha.");
+					hpCpu -= 20;
+					especiais--;
+					break;	
+  				default:
+  					System.out.println("Opção Invalida.");
+  					break;
+  				}
+  				if (hpCpu > 0) {
+  					ataque = AtaqueCpu();
+  					switch (ataque) {
+  					case 1:
+  						System.out.println(" Capitão Gyuniu Atacou com um Soco.");
+  						hpUsuario -= 5 + (int) (i / 10);
+  						break;
+  					case 2:
+  						System.out.println(" Capitão Gyuniu Atacou com um Chute.");
+  						hpUsuario -= 6 + (int) (i / 10);
+  						break;
+  					case 3:
+  						System.out.println(" Capitão Gyuniu Atacou com um Especial");
+  						hpUsuario -= 7 + (int) (i / 20);
+  						break;
+  					}
+
+  				} else {
+  					System.out.println("Antes de Capitão Ginyu ser derrotado ele usou sua carta na manga,");
+  					System.out.println("seu verdadeiro poder é trasferir sua mente a outro corpo sendo assim trocando de corpo ");
+  					System.out.println("logo ele usa esse poder contra Goku, so que um sapo ao inves de Goku foi alvejado");
+  					System.out.println("Enviando sua conciencia para sempre dentro de um sapo, e vendo seu corpo sair saltitando e coaxando como um sapo\n");
+  				}
+  			}
+  			if (hpUsuario > 0) {
+  				hpUsuario += 5;
+  				if (hpUsuario > 150) {
+  					hpUsuario = 150;
+  				}
+  				
+  			}
+
+  			i++;
+  		}
+          while (i == 6) {
+    			
+    			hpCpu = 50;
+    			System.out.println("=-=-=-=-=-=-=-=-=-=");
+    			System.out.println("    Dodoria    ");
+    			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
+
+    			while (hpUsuario > 0 && hpCpu > 0) {
+    				HP(hpUsuario, hpCpu);
+    				ataque = AtaqueUsuario(soco,chute,especiais);
+    				switch (ataque) {
+    				case 1:
+    					System.out.println("Voce Atacou com um Soco.");
+    					hpCpu -= 7;
+    					soco--;
+    					break;
+    				case 2:
+    					System.out.println("Voce Atacou com um Chute.");
+    					hpCpu -= 5;
+    					chute--;
+    					break;
+    				case 3:
+    					System.out.println("Voce Atacou com um Kamehameha.");
+    					hpCpu -= 20;
+    					especiais--;
+    					break;	
+    				default:
+    					System.out.println("Opção Invalida.");
+    					break;
+    				}
+    				if (hpCpu > 0) {
+    					ataque = AtaqueCpu();
+    					switch (ataque) {
+    					case 1:
+    						System.out.println(" Dodoria Atacou com um Soco.");
+    						hpUsuario -= 7 + (int) (i / 10);
+    						break;
+    					case 2:
+    						System.out.println(" Dodoria Atacou com um Chute.");
+    						hpUsuario -= 8 + (int) (i / 10);
+    						break;
+    					case 3:
+    						System.out.println(" Dodoria Atacou com um Especial");
+    						hpUsuario -= 9 + (int) (i / 20);
+    						break;
+    					}
+
+    				} else {
+    					System.out.println("Dodoria Derrotado");
+    				}
+    			}
+    			if (hpUsuario > 0) {
+    				hpUsuario += 5;
+    				if (hpUsuario > 150) {
+    					hpUsuario = 150;
+    				}
+    				
+    			}
+
+    			i++;
+    		}
+          while (i == 7) {
+  			
+  			hpCpu = 55;
+  			System.out.println("=-=-=-=-=-=-=-=-=-=");
+  			System.out.println("    Zarbon     ");
+  			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
+
+  			while (hpUsuario > 0 && hpCpu > 0) {
+  				HP(hpUsuario, hpCpu);
+  				ataque = AtaqueUsuario(soco,chute,especiais);
+  				switch (ataque) {
+  				case 1:
+					System.out.println("Voce Atacou com um Soco.");
+					hpCpu -= 7;
+					soco--;
+					break;
+				case 2:
+					System.out.println("Voce Atacou com um Chute.");
+					hpCpu -= 5;
+					chute--;
+					break;
+				case 3:
+					System.out.println("Voce Atacou com um Kamehameha.");
+					hpCpu -= 20;
+					especiais--;
+					break;	
+  				default:
+  					System.out.println("Opção Invalida.");
+  					break;
+  				}
+  				if (hpCpu > 0) {
+  					ataque = AtaqueCpu();
+  					switch (ataque) {
+  					case 1:
+  						System.out.println("Zarbon Atacou com um Soco.");
+  						hpUsuario -= 9 + (int) (i / 10);
+  						break;
+  					case 2:
+  						System.out.println("Zarbon Atacou com um Chute.");
+  						hpUsuario -= 10 + (int) (i / 10);
+  						break;
+  					case 3:
+  						System.out.println("Zarbon Atacou com um Especial");
+  						hpUsuario -= 11 + (int) (i / 20);
+  						break;
+  					}
+
+  				} else {
+  					System.out.println("Dodoria Derrotado");
+  				}
+  			}
+  			if (hpUsuario > 0) {
+  				hpUsuario += 5;
+  				if (hpUsuario > 150) {
+  					hpUsuario = 150;
+  				}
+  				
+  			}
+
+  			i++;
+  		}
+          while (i == 8) {
+    			
+    			hpCpu = 70;
+    			System.out.println("=-=-=-=-=-=-=-=-=-=");
+    			System.out.println("   Frezza    ");
+    			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
+
+    			while (hpUsuario > 0 && hpCpu > 0) {
+    				HP(hpUsuario, hpCpu);
+    				ataque = AtaqueUsuario(soco,chute,especiais);
+    				switch (ataque) {
+    				case 1:
+    					System.out.println("Voce Atacou com um Soco.");
+    					hpCpu -= 7;
+    					soco--;
+    					break;
+    				case 2:
+    					System.out.println("Voce Atacou com um Chute.");
+    					hpCpu -= 5;
+    					chute--;
+    					break;
+    				case 3:
+    					System.out.println("Voce Atacou com um Kamehameha.");
+    					hpCpu -= 20;
+    					especiais--;
+    					break;	
+    				default:
+    					System.out.println("Opção Invalida.");
+    					break;
+    				}
+    				if (hpCpu > 0) {
+    					ataque = AtaqueCpu();
+    					switch (ataque) {
+    					case 1:
+    						System.out.println(" Frezza Atacou com um Soco.");
+    						hpUsuario -= 13 + (int) (i / 10);
+    						break;
+    					case 2:
+    						System.out.println(" Frezza Atacou com um Chute.");
+    						hpUsuario -= 14 + (int) (i / 10);
+    						break;
+    					case 3:
+    						System.out.println(" Frezza Atacou com um Especial");
+    						hpUsuario -= 15 + (int) (i / 20);
+    						break;
+    					}
+
+    				} else {
+    					System.out.println("Frezza Derrotado");
+    				}
+    			  			
+
+    			i++;
+    			
+    		} } 
 		return i;
-	}
+          }
 
 	static void JogarBatalha() {
 		int cont = 1;
-		int record = 0;
+		
 		while (cont == 1) {
 
 			int inimigos = Combate();
-			if (inimigos > record) {
-				record = inimigos;
-			}
-			System.out.println("Record Atual: " + record);
-
-			System.out.println("Fim do Jogo. Deseja Continuar?");
+			
+			System.out.println("Fim do Jogo. Deseja Jogar novamente?");
 			System.out.println("(1) Sim");
 			System.out.println("(2) Não");
 			cont = scan.nextInt();
@@ -592,21 +1083,19 @@ public class Jogo {
 			System.out.println("1 - Jogar Batalha");
 			System.out.println("2 - Jogar Desafio QI");
 			System.out.println("3 - Instruções da Batalha");
-			System.out.println("4 - Instruções do Desafio QI");
-			System.out.println("5 - Historia do Jogo");
-			System.out.println("6 - Sair");
+			System.out.println("4 - Instruções do Desafio QI");			
+			System.out.println("5 - Sair");
 			op = scan.nextInt();
 
 			while (op < 1 || op > 6) {
 				System.out
-						.println("Numero Digitado é menor ou maior que as opições Disponiveis!Tente Novamente." + "\n");
+						.println("Numero Digitado é menor ou maior que as opções Disponiveis!Tente Novamente." + "\n");
 				System.out.println("*--MENU--*");
 				System.out.println("1 - Jogar Batalha");
 				System.out.println("2 - Jogar Desafio QI");
 				System.out.println("3 - Instruções da Batalha");
-				System.out.println("4 - Instruções do Desafio QI");
-				System.out.println("5 - Historia do Jogo");
-				System.out.println("6 - Sair");
+				System.out.println("4 - Instruções do Desafio QI");			
+				System.out.println("5 - Sair");
 				op = scan.nextInt();
 			}
 
@@ -622,13 +1111,11 @@ public class Jogo {
 				break;
 			case 4:
 				InstrucaoDesafio();
-				break;
+				break;			
 			case 5:
-				Historia();
-			case 6:
 				System.out.println("Você saiu do Jogo.");
 			}
-		} while (!(op == 6));
+		} while (!(op == 5));
 
 	}
 
