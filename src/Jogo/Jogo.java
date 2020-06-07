@@ -48,7 +48,7 @@ public class Jogo {
 		int hpCpu;
 		int soco = 7;
 		int chute = 5;
-		int especiais = 20;
+		int especiais = 5;
 		int ataque;
 		int i = 1;
 		int resposta;
@@ -146,7 +146,7 @@ public class Jogo {
 			i++;
 		
 
-		while (hpUsuario > 0) {
+		if (hpUsuario > 0) {
 
 			System.out.println("Depois que Goku derrota Rikum, Yuz um dos seus companheiros das forças especias Gyuniu");
 			System.out.println("Comovido pela raiva, parte sem ao menos pensar para cima de Goku");
@@ -208,6 +208,7 @@ public class Jogo {
 
 					} else {
 						System.out.println("Yuz Derrotado\n");
+						break;
 					}
 				}
 			}
@@ -227,7 +228,7 @@ public class Jogo {
 
 			i++;
 		}
-	     while (hpUsuario > 0) {
+	     if(hpUsuario > 0) {
 
 			System.out.println("Boter das forças especias vendo isso, recua rapidamente(Boter é um dos seres mais rapidos do universo)\n");
 			System.out.println("-- Boter -- O que é aquele cara? como ele pode derrotar nos da a força gyuniu fomos escolhidos a dedo pelo senhor frezza");
@@ -307,7 +308,7 @@ public class Jogo {
 
 			i++;
 		}
-		while (hpUsuario > 0) {
+		if (hpUsuario > 0) {
 
 			System.out.println("Apos Goku derrotar Boter ele volta para o campo de batalha\n");
 			System.out.println("-- Gurdo -- Onde esta Boter? O que voce fez com ele seu miseravel?");
@@ -387,7 +388,7 @@ public class Jogo {
 
 			i++;
 		}
-		while (hpUsuario > 0) {
+		if (hpUsuario > 0) {
 
 			System.out.println("-- Capitão Ginyu  -- Vejo que voce lidou bem com meus auxiliados,porem agora que o verdadeiro desafio começou!!");
 			System.out.println("-- Goku  -- Espero que voce n seja uma decepção como os outros");
@@ -466,9 +467,23 @@ public class Jogo {
 
 			i++;
 		}
-		while (hpUsuario > 0) {
+		if (hpUsuario > 0) {
+			
+			 hpCpu = 50;
+	            System.out.println("-- Goku  -- Ei, Kuririm onde está frezza?");
+	            System.out.println("-- Kuririm  -- Ah 4 km ao norte");
+	            System.out.println("-- Goku -- Certo,estou indo para lá, cuide de Gohan ");
+	            System.out.println("-- Kuririm  -- Tome cuidado Goku, Frezza não é como esses caras");
+	            System.out.println("-- Goku -- Eu sei ... não se preocupe logo estaremos em casa\n");
+	            System.out.println("Goku a caminho de Frezza se depara com dois seres estramamente fortes");
+	            System.out.println("-- Goku -- Quem são voces?");
+	            System.out.println("-- Dodoria -- Eu sou Dodoria e esse é Zarbon, somos os mais fortesdo imperio de Frezza para chegar até ele tera que passar por nos");
+	            System.out.println("-- Zarbon -- Não diga nossos nomes para esse verme Dodoria!!");
+	            System.out.println("-- Dodoria -- Fique tranquilo ele não vivera para lembrar");
+	            System.out.println("Goku velozmente a ataca Dodoria,Mas ele desvia");
+	            System.out.println("-- Dodoria -- Então voce quer lutar comigo? Vamos lá, não interfira Zarbon ele é meu");
+	            System.out.println("-- Zarbon -- ... ");
 
-			hpCpu = 50;
 			System.out.println("=-=-=-=-=-=-=-=-=-=");
 			System.out.println("    Dodoria    ");
 			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
@@ -511,7 +526,8 @@ public class Jogo {
 					}
 
 				} else {
-					System.out.println("Dodoria Derrotado");
+					System.out.println("-- Dodoria -- Como voce é tão forte?... bom não importa voce não ganhara de Zarbon");
+                    System.out.println("Dodoria Derrotado\n");
 				}
 			}
 			if (hpUsuario > 0) {
@@ -530,7 +546,12 @@ public class Jogo {
 
 			i++;
 		}
-		while (hpUsuario > 0) {
+		if (hpUsuario > 0) {
+			
+			hpCpu = 55;
+            System.out.println("-- Zarbon  -- Então voce derrotou Dodoria,não pensa que ira me vencer sou o braço direito "
+                    + "de frezza e não tenho misericordia");
+            System.out.println("-- Goku  -- Então voce é forte né? isso é o que nos vamos ver");
 
 			hpCpu = 55;
 			System.out.println("=-=-=-=-=-=-=-=-=-=");
@@ -576,6 +597,10 @@ public class Jogo {
 
 				} else {
 					System.out.println("Dodoria Derrotado");
+					System.out.println("Um dragão gigantesco surge derepente, sera que Frezza conseguiou todas as esferas?");
+                    System.out.println("-- Zarbon  -- Tarde de mais, voce pode até ter me derrotado, mas n podera ganhar de Frezza após realizar seu desejo");
+                    System.out.println("Goku desesperadamente voa até onde Frezza está,sera que ele chegara a tempo?");
+                    System.out.println("Zarbon Derrotado\n");
 				}
 			}
 			if (hpUsuario > 0) {
@@ -594,9 +619,17 @@ public class Jogo {
 
 			i++;
 		}
-		while (hpUsuario > 0) {
+		if (hpUsuario > 0) {
 
 			hpCpu = 70;
+
+            System.out.println("Goku chega e ve Frezza gritando com o dragão do planeta Namekusei");
+            System.out.println("-- Frezza  -- POR QUE VOCE NÃO REALIZA MEU DESEJO?");
+            System.out.println("-- Goku  -- Voce tem que lhe dizer as falas certas antes de falar seu desejo");
+            System.out.println("-- Frezza  -- Oque eu tenho que falar e quem é voce?");
+            System.out.println("-- Goku  -- Meu nome é Goku e vim derrotar voce pelo bem do planeta e do universo");
+            System.out.println("-- Frezza  -- Me derrotar? Não seja tolo, ME DIGA OQUE EU TENHO QUE DIZER SE NÃO EU TE MATO");
+            System.out.println("-- Goku  -- Voce tera que me derrotar para descobrir");
 			System.out.println("=-=-=-=-=-=-=-=-=-=");
 			System.out.println("   Frezza    ");
 			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
@@ -639,7 +672,16 @@ public class Jogo {
 					}
 
 				} else {
-					System.out.println("Frezza Derrotado");
+					System.out.println("Frezza Derrotado\n");
+					System.out.println("-- Kuririm  -- Boa Goku voce conseguiu derrotalo");
+                    System.out.println("Frezza faz kuririm flutuar e logo depois o explode");
+                    System.out.println("-- Goku  -- kURIRIM, NÃOOOOOOOO!!");
+                    System.out.println("-- Goku  -- EU NÃO VOU PERDOALOOOOOOO!!");
+                    System.out.println("Raios começam a surgir em volta de Goku e seu cabelo começa a ficar loiro,sera que ele é lendario Super Sayajin?Não a duvidas que sim");
+                    System.out.println("-- Frezza  -- Como voce... eu achava que isso era um mito,não é possivel,vo...vo...voce é um Super Sayajin!!!");
+                    System.out.println("Frezza corre para sua nave e foge para longe do planeta,Deixando o planeta a salvo e Kuririm morto");
+                    System.out.println("Como será que Goku reagira a isso?");
+                    System.out.println("Continua...\n");
 				}
 
 				i++;
@@ -1124,7 +1166,12 @@ public class Jogo {
 	}
 
 	static void InstrucaoBatalha() {
-
+		System.out.println("             *=-=-=-=-=-=-= INSTRUÇÕES DA BATALHA =-=-=-=-=-=-=");
+        System.out.println(" Para jogar o modo batalha o usuario tera 3 alternativas de Ataque sendo elas soco,  ");
+        System.out.println(" chute, e o especial Kamehameha. o usuario tera que digita entre 1, 2, 3 para atacar ");
+        System.out.println(" com um golpe. o ataque especial se inicia com 5 e quando o usuario derrotar 6 oponentes");
+        System.out.println(" sera adicionado mais 1 ataque especial. Mas enquanto o especial estiver em 0, o usuario");
+        System.out.println(" não conseguira usar o especial e se ele tentar usar esse ataque mesmo assim perdera uma jogada.\n");
 	}
 
 	static void InstrucaoDesafio() {
@@ -1135,10 +1182,13 @@ public class Jogo {
 		System.out.println(" você acerta todas questões ou quando suas chances terminarem. O resultado sera mostrado");
 		System.out.println(" assim que o teste terminar.\n");
 	}
-
+	
 	static void Historia() {
-
-	}
+		System.out.println("           *-=-=-=-=-= Historia =-=-=-=-=-*            ");
+        System.out.println("Quase toda a Saga Freeza se passa no planeta Namekusei.");
+        System.out.println("O enredo principal é a tão aguardada luta entre Goku e Freeza,");
+        System.out.println("com Kuririn, Gohan, Piccolo, e Vegeta também participando.");
+    }
 
 	static void Menu() {
 		int op;
@@ -1159,7 +1209,8 @@ public class Jogo {
 				System.out.println("2 - Jogar Desafio QI");
 				System.out.println("3 - Instruções da Batalha");
 				System.out.println("4 - Instruções do Desafio QI");
-				System.out.println("5 - Sair");
+				System.out.println("5 - Historia");
+				System.out.println("6 - Sair");
 				op = scan.nextInt();
 			}
 
@@ -1177,9 +1228,11 @@ public class Jogo {
 				InstrucaoDesafio();
 				break;
 			case 5:
+				Historia();
+			case 6:
 				System.out.println("Você saiu do Jogo.");
 			}
-		} while (!(op == 5));
+		} while (!(op == 6));
 
 	}
 
