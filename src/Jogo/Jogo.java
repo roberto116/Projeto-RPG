@@ -1199,7 +1199,8 @@ public class Jogo {
 			System.out.println("2 - Jogar Desafio QI");
 			System.out.println("3 - Instruções da Batalha");
 			System.out.println("4 - Instruções do Desafio QI");
-			System.out.println("5 - Sair");
+			System.out.println("5 - Historia");
+			System.out.println("6 - Sair");
 			op = scan.nextInt();
 
 			while (op < 1 || op > 6) {
