@@ -33,16 +33,6 @@ public class Jogo {
 		System.out.println("=======================");
 	}
 
-	static int VerificarEspeciais(int especiais) {
-		int n = 0;
-		if (especiais < 1) {
-			System.out.println("GOKU não tem mais energia para atacar com o Especial!");
-			n = 0;
-		}
-
-		return n;
-	}
-
 	static int Combate() {
 		int hpUsuario = 300;
 		int hpCpu;
@@ -50,7 +40,7 @@ public class Jogo {
 		int chute = 5;
 		int especiais = 5;
 		int ataque;
-		int i = 1;
+		int i = 0;
 		int resposta;
 		int continuar;
 
@@ -127,6 +117,7 @@ public class Jogo {
 
 						} else {
 							System.out.println("Rikum Derrotado\n");
+							i++;
 						}
 					}
 			}
@@ -143,7 +134,7 @@ public class Jogo {
 				}
 			}
 
-			i++;
+			
 		
 
 		if (hpUsuario > 0) {
@@ -208,6 +199,7 @@ public class Jogo {
 
 					} else {
 						System.out.println("Yuz Derrotado\n");
+						i++;
 						break;
 					}
 				}
@@ -226,7 +218,7 @@ public class Jogo {
 
 			}
 
-			i++;
+			
 		}
 	     if(hpUsuario > 0) {
 
@@ -290,6 +282,7 @@ public class Jogo {
 
 					} else {
 						System.out.println("Boter Derrotado\n");
+						i++;
 					}
 				}
 			}
@@ -306,7 +299,7 @@ public class Jogo {
 				}
 			}
 
-			i++;
+			
 		}
 		if (hpUsuario > 0) {
 
@@ -369,6 +362,7 @@ public class Jogo {
 
 					} else {
 						System.out.println("Gurdo Derrotado\n");
+						i++;
 					}
 				}
 			}
@@ -386,7 +380,7 @@ public class Jogo {
 
 			}
 
-			i++;
+			
 		}
 		if (hpUsuario > 0) {
 
@@ -449,6 +443,7 @@ public class Jogo {
 					System.out.println("seu verdadeiro poder é trasferir sua mente a outro corpo sendo assim trocando de corpo ");
 					System.out.println("logo ele usa esse poder contra Goku, so que um sapo ao inves de Goku foi alvejado");
 					System.out.println("Enviando sua conciencia para sempre dentro de um sapo, e vendo seu corpo sair saltitando e coaxando como um sapo\n");
+					i++;
 				}
 			}
 			if (hpUsuario > 0) {
@@ -465,7 +460,7 @@ public class Jogo {
 
 			}
 
-			i++;
+			
 		}
 		if (hpUsuario > 0) {
 			
@@ -483,6 +478,14 @@ public class Jogo {
 	            System.out.println("Goku velozmente a ataca Dodoria,Mas ele desvia");
 	            System.out.println("-- Dodoria -- Então voce quer lutar comigo? Vamos lá, não interfira Zarbon ele é meu");
 	            System.out.println("-- Zarbon -- ... ");
+	            System.out.println("1 - Para Batalhar");
+				continuar = scan.nextInt();
+				
+				while (continuar > 1 || continuar < 1) {
+					System.out.println("Valor Invalido!");
+					System.out.println("Digite 1 para conitinua!");
+					continuar = scan.nextInt();
+				}
 
 			System.out.println("=-=-=-=-=-=-=-=-=-=");
 			System.out.println("    Dodoria    ");
@@ -528,6 +531,7 @@ public class Jogo {
 				} else {
 					System.out.println("-- Dodoria -- Como voce é tão forte?... bom não importa voce não ganhara de Zarbon");
                     System.out.println("Dodoria Derrotado\n");
+                    i++;
 				}
 			}
 			if (hpUsuario > 0) {
@@ -544,7 +548,7 @@ public class Jogo {
 
 			}
 
-			i++;
+			
 		}
 		if (hpUsuario > 0) {
 			
@@ -552,7 +556,14 @@ public class Jogo {
             System.out.println("-- Zarbon  -- Então voce derrotou Dodoria,não pensa que ira me vencer sou o braço direito "
                     + "de frezza e não tenho misericordia");
             System.out.println("-- Goku  -- Então voce é forte né? isso é o que nos vamos ver");
-
+            System.out.println("1 - Para Batalhar");
+			continuar = scan.nextInt();
+			
+			while (continuar > 1 || continuar < 1) {
+				System.out.println("Valor Invalido!");
+				System.out.println("Digite 1 para conitinua!");
+				continuar = scan.nextInt();
+			}
 			hpCpu = 55;
 			System.out.println("=-=-=-=-=-=-=-=-=-=");
 			System.out.println("    Zarbon     ");
@@ -601,6 +612,7 @@ public class Jogo {
                     System.out.println("-- Zarbon  -- Tarde de mais, voce pode até ter me derrotado, mas n podera ganhar de Frezza após realizar seu desejo");
                     System.out.println("Goku desesperadamente voa até onde Frezza está,sera que ele chegara a tempo?");
                     System.out.println("Zarbon Derrotado\n");
+                    i++;
 				}
 			}
 			if (hpUsuario > 0) {
@@ -617,7 +629,7 @@ public class Jogo {
 
 			}
 
-			i++;
+			
 		}
 		if (hpUsuario > 0) {
 
@@ -630,7 +642,15 @@ public class Jogo {
             System.out.println("-- Goku  -- Meu nome é Goku e vim derrotar voce pelo bem do planeta e do universo");
             System.out.println("-- Frezza  -- Me derrotar? Não seja tolo, ME DIGA OQUE EU TENHO QUE DIZER SE NÃO EU TE MATO");
             System.out.println("-- Goku  -- Voce tera que me derrotar para descobrir");
-			System.out.println("=-=-=-=-=-=-=-=-=-=");
+            System.out.println("1 - Para Batalhar");
+			continuar = scan.nextInt();
+			
+			while (continuar > 1 || continuar < 1) {
+				System.out.println("Valor Invalido!");
+				System.out.println("Digite 1 para conitinua!");
+				continuar = scan.nextInt();
+			}
+            System.out.println("=-=-=-=-=-=-=-=-=-=");
 			System.out.println("   Frezza    ");
 			System.out.println("=-=-=-=-=-=-=-=-=-=\n");
 
@@ -682,9 +702,8 @@ public class Jogo {
                     System.out.println("Frezza corre para sua nave e foge para longe do planeta,Deixando o planeta a salvo e Kuririm morto");
                     System.out.println("Como será que Goku reagira a isso?");
                     System.out.println("Continua...\n");
+                    i++;
 				}
-
-				i++;
 
 			}
 		}
