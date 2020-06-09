@@ -12,10 +12,10 @@ public class Jogo {
 
 	static int AtaqueUsuario(int soco, int chute, int especiais) {
 		int ataque;
-		System.out.println("*--Escolha seu Ataque--*");
-		System.out.println("1 - Soco ");
-		System.out.println("2 - Chute ");
-		System.out.println("3 - Especial Kamehameha ");
+		System.out.println("--Escolha seu Ataque--");
+		System.out.println("1 - Soco - 7 de Dano ");
+		System.out.println("2 - Chute - 5 de Dano ");
+		System.out.println("3 - Especial Kamehameha - 20 de Dano ");
 		ataque = scan.nextInt();
 		return ataque;
 	}
@@ -60,7 +60,7 @@ public class Jogo {
 
 			if (resposta == 1) {
 				System.out.println("Goku logo que chega no planeta sente o ki de kuririn e gohan e parte com todo sua velocidade para ajuda-los ");
-				System.out.println("Depois de ajudar seus companheiros, Rikum uns dos memebro das forças especias Gyuniu vendo que seus inimigos estão se recuperando,");
+				System.out.println("Depois de ajudar seus companheiros, Rikum uns dos 5 membros das forças especias Gyuniu vendo que seus inimigos estão se recuperando,");
 				System.out.println("Começa a se auto explodir, Goku parte pra cima e o confronta");
 				System.out.println("1 - Para Batalhar");
 				continuar = scan.nextInt();
@@ -181,15 +181,15 @@ public class Jogo {
 						ataque = AtaqueCpu();
 						switch (ataque) {
 						case 1:
-							System.out.println(" Yuz Atacou com um Soco.");
+							System.out.println("Yuz Atacou com um Soco.");
 							hpUsuario -= 2 + (int) (i / 5);
 							break;
 						case 2:
-							System.out.println(" Yuz Atacou com um Chute.");
+							System.out.println("Yuz Atacou com um Chute.");
 							hpUsuario -= 3 + (int) (i / 5);
 							break;
 						case 3:
-							System.out.println(" Yuz Atacou com um Especial");
+							System.out.println("Yuz Atacou com um Especial");
 							hpUsuario -= 4 + (int) (i / 10);
 							break;
 						default:
@@ -267,11 +267,11 @@ public class Jogo {
 						ataque = AtaqueCpu();
 						switch (ataque) {
 						case 1:
-							System.out.println(" Boter Atacou com um Soco.");
+							System.out.println("Boter Atacou com um Soco.");
 							hpUsuario -= 2 + (int) (i / 5);
 							break;
 						case 2:
-							System.out.println(" Boter Atacou com um Chute.");
+							System.out.println("Boter Atacou com um Chute.");
 							hpUsuario -= 3 + (int) (i / 5);
 							break;
 						case 3:
@@ -347,15 +347,15 @@ public class Jogo {
 						ataque = AtaqueCpu();
 						switch (ataque) {
 						case 1:
-							System.out.println(" Gurdo Atacou com um Soco.");
+							System.out.println("Gurdo Atacou com um Soco.");
 							hpUsuario -= 4 + (int) (i / 5);
 							break;
 						case 2:
-							System.out.println(" Gurdo Atacou com um Chute.");
+							System.out.println("Gurdo Atacou com um Chute.");
 							hpUsuario -= 5 + (int) (i / 5);
 							break;
 						case 3:
-							System.out.println(" Gurdo Atacou com um Especial");
+							System.out.println("Gurdo Atacou com um Especial");
 							hpUsuario -= 6 + (int) (i / 10);
 							break;
 						}
@@ -425,15 +425,15 @@ public class Jogo {
 					ataque = AtaqueCpu();
 					switch (ataque) {
 					case 1:
-						System.out.println(" Capitão Gyuniu Atacou com um Soco.");
+						System.out.println("Capitão Gyuniu Atacou com um Soco.");
 						hpUsuario -= 5 + (int) (i / 5);
 						break;
 					case 2:
-						System.out.println(" Capitão Gyuniu Atacou com um Chute.");
+						System.out.println("Capitão Gyuniu Atacou com um Chute.");
 						hpUsuario -= 6 + (int) (i / 5);
 						break;
 					case 3:
-						System.out.println(" Capitão Gyuniu Atacou com um Especial");
+						System.out.println("Capitão Gyuniu Atacou com um Especial");
 						hpUsuario -= 7 + (int) (i / 10);
 						break;
 					}
@@ -515,15 +515,15 @@ public class Jogo {
 					ataque = AtaqueCpu();
 					switch (ataque) {
 					case 1:
-						System.out.println(" Dodoria Atacou com um Soco.");
+						System.out.println("Dodoria Atacou com um Soco.");
 						hpUsuario -= 7 + (int) (i / 5);
 						break;
 					case 2:
-						System.out.println(" Dodoria Atacou com um Chute.");
+						System.out.println("Dodoria Atacou com um Chute.");
 						hpUsuario -= 8 + (int) (i / 5);
 						break;
 					case 3:
-						System.out.println(" Dodoria Atacou com um Especial");
+						System.out.println("Dodoria Atacou com um Especial");
 						hpUsuario -= 9 + (int) (i / 10);
 						break;
 					}
@@ -678,15 +678,15 @@ public class Jogo {
 					ataque = AtaqueCpu();
 					switch (ataque) {
 					case 1:
-						System.out.println(" Frezza Atacou com um Soco.");
+						System.out.println("Frezza Atacou com um Soco.");
 						hpUsuario -= 13 + (int) (i / 5);
 						break;
 					case 2:
-						System.out.println(" Frezza Atacou com um Chute.");
+						System.out.println("Frezza Atacou com um Chute.");
 						hpUsuario -= 14 + (int) (i / 5);
 						break;
 					case 3:
-						System.out.println(" Frezza Atacou com um Especial");
+						System.out.println("Frezza Atacou com um Especial");
 						hpUsuario -= 15 + (int) (i / 10);
 						break;
 					}
@@ -1203,7 +1203,7 @@ public class Jogo {
 	}
 	
 	static void Historia() {
-		System.out.println("           *-=-=-=-=-= Historia =-=-=-=-=-*            ");
+		System.out.println("           -=-=-=-=-= Historia =-=-=-=-=-            ");
         System.out.println("Quase toda a Saga Freeza se passa no planeta Namekusei.");
         System.out.println("O enredo principal é a tão aguardada luta entre Goku e Freeza,");
         System.out.println("com Kuririn, Gohan, Piccolo, e Vegeta também participando.");
@@ -1213,7 +1213,7 @@ public class Jogo {
 		int op;
 
 		do {
-			System.out.println("**=-=-=-=-MENU-=-=-=-=**");
+			System.out.println("*=-=-=-=-MENU-=-=-=-=*");
 			System.out.println("1 - Jogar Batalha");
 			System.out.println("2 - Jogar Desafio QI");
 			System.out.println("3 - Instruções da Batalha");
@@ -1224,7 +1224,7 @@ public class Jogo {
 
 			while (op < 1 || op > 6) {
 				System.out.println("Numero Digitado é menor ou maior que as opções Disponiveis!Tente Novamente." + "\n");
-				System.out.println("***=-=-=-=-MENU-=-=-=-=**");
+				System.out.println("*=-=-=-=-MENU-=-=-=-=**");
 				System.out.println("1 - Jogar Batalha");
 				System.out.println("2 - Jogar Desafio QI");
 				System.out.println("3 - Instruções da Batalha");
